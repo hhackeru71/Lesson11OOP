@@ -1,4 +1,7 @@
-﻿namespace Lesson11OOP
+﻿using System.Diagnostics.Tracing;
+using System.IO;
+
+namespace Lesson11OOP
 {
     internal class Program
     {
@@ -14,6 +17,29 @@
         {
             try
             {
+
+
+                string sourcePath = @"C:\Users\yarin\Desktop\האקר יו לימודים\c# oop\Lesson11OOP\bin\Debug\net6.0\newFile5.txt";
+                string deliverypath = @"C:\Users\yarin\Desktop\האקר יו לימודים\c# oop\Lesson11OOP\bin\newFile3.txt";
+                string dataText = @"This Is A New File Delivery";
+                if (!File.Exists(sourcePath))
+                {
+                    File.Create(sourcePath);
+                    File.WriteAllText(sourcePath, dataText);
+                }
+                else
+                {
+                    File.WriteAllText(sourcePath, dataText);
+                    Console.WriteLine(File.ReadAllText(sourcePath));
+                    if(!File.Exists(deliverypath))
+                    File.Copy(sourcePath, deliverypath);
+                }
+
+
+
+
+
+
                 //ליצור בנתיב מסויים שתבחרו קובץ בשם newFile.txt
                 //לאחר מכן לכתוב לקובץ "this is new file 
                 //בדיקה במידה והקובץ קיים או שלא קיים 
@@ -21,32 +47,32 @@
                 //להעתיק את הקובץ שיצרנו לתיקייה אחרת בשם אחר של הקובץ 
                 //
 
-                string data = "this is new file";
-                string path = @"C:\Users\yarin\Desktop\האקר יו לימודים\c# oop\Lesson11OOP\bin\Debug\net6.0\newFile.txt";
-                string destPath = @"C:\Users\yarin\Desktop\האקר יו לימודים\c# oop\Lesson11OOP\bin\newFile2.txt";
-                if (!File.Exists(path))
-                {
-                    File.Create(path);
-                    File.WriteAllText(path, data);
-                    
-                }
-                else
-                {
-                    File.WriteAllText(path, data);
+                //string data = "this is new file";
+                //string path = @"C:\Users\yarin\Desktop\האקר יו לימודים\c# oop\Lesson11OOP\bin\Debug\net6.0\newFile.txt";
+                //string destPath = @"C:\Users\yarin\Desktop\האקר יו לימודים\c# oop\Lesson11OOP\bin\newFile2.txt";
+                //if (!File.Exists(path))
+                //{
+                //    File.Create(path);
+                //    File.WriteAllText(path, data);
 
-                    //File.Move(path, destPath+@"\yarin2344.txt"); 
-                    ////File.Copy(path,destPath+@"\yarin1234.txt");
-                    //File.WriteAllText(path,data);
-                    //Console.WriteLine(File.ReadAllText(path));
-                    ////Console.WriteLine("the file is exists");
-                }
+                //}
+                //else
+                //{
+                //    File.WriteAllText(path, data);
 
-                Console.WriteLine(File.ReadAllText(path));
-                if(!File.Exists(destPath))
-                File.Copy(path, destPath);
+                //    //File.Move(path, destPath+@"\yarin2344.txt"); 
+                //    ////File.Copy(path,destPath+@"\yarin1234.txt");
+                //    //File.WriteAllText(path,data);
+                //    //Console.WriteLine(File.ReadAllText(path));
+                //    ////Console.WriteLine("the file is exists");
+                //}
+
+                //Console.WriteLine(File.ReadAllText(path));
+                //if(!File.Exists(destPath))
+                //File.Copy(path, destPath);
 
 
-               
+
 
 
 
