@@ -27,9 +27,6 @@
                 ChangeObjectByAge(person);
                 Console.WriteLine(person.Age);
 
-
-
-
                 //Dictionary<int, string> dic = new Dictionary<int, string>();
                 //dic.Add(1, "yarin");
                 //dic.Add(2, "sdf");
