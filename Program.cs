@@ -21,23 +21,31 @@
                 //להעתיק את הקובץ שיצרנו לתיקייה אחרת בשם אחר של הקובץ 
                 //
 
-                string data = "123";
-                string path = @"C:\Users\yarin\Desktop\האקר יו לימודים\c# oop\Lesson11OOP\bin\Debug\net6.0\yarin.txt";
-                string destPath = @"C:\Users\yarin\Desktop\האקר יו לימודים\c# oop\Lesson11OOP\bin";
+                string data = "this is new file";
+                string path = @"C:\Users\yarin\Desktop\האקר יו לימודים\c# oop\Lesson11OOP\bin\Debug\net6.0\newFile.txt";
+                string destPath = @"C:\Users\yarin\Desktop\האקר יו לימודים\c# oop\Lesson11OOP\bin\newFile2.txt";
                 if (!File.Exists(path))
                 {
-                    File.Create("yarin.txt");
+                    File.Create(path);
                     File.WriteAllText(path, data);
-
+                    
                 }
                 else
                 {
-                    File.Move(path, destPath+@"\yarin2344.txt"); 
-                    File.Copy(path,destPath+@"\yarin1234.txt");
-                    File.WriteAllText(path,data);
-                    Console.WriteLine(File.ReadAllText(path));
-                    //Console.WriteLine("the file is exists");
+                    File.WriteAllText(path, data);
+
+                    //File.Move(path, destPath+@"\yarin2344.txt"); 
+                    ////File.Copy(path,destPath+@"\yarin1234.txt");
+                    //File.WriteAllText(path,data);
+                    //Console.WriteLine(File.ReadAllText(path));
+                    ////Console.WriteLine("the file is exists");
                 }
+
+                Console.WriteLine(File.ReadAllText(path));
+                if(!File.Exists(destPath))
+                File.Copy(path, destPath);
+
+
                
 
 
